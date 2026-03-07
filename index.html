@@ -377,7 +377,7 @@
                                 <div class="w-8 h-8 rounded-full bg-liberal flex items-center justify-center text-white flex-shrink-0">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
                                 </div>
-                                <span class="text-sm font-medium text-text-main">Escritor @LaSillaVacia</span>
+                                <span class="text-sm font-medium text-text-main">Escritor LaSillaVacia</span>
                             </div>
                         </div>
                     </div>
@@ -703,7 +703,7 @@
                 <div class="mb-8">
                     <a href="https://www.instagram.com/luismiguelguerrero.10/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-liberal text-white font-semibold shadow-lg shadow-liberal/25 hover:shadow-xl hover:bg-liberal-dark hover:-translate-y-0.5 transition-all duration-300 text-lg">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" /></svg>
-                        @luismiguelguerrero.10
+                        luismiguelguerrero.10
                     </a>
                 </div>
                 <div class="bg-white rounded-2xl p-6 border border-liberal/10">
@@ -735,7 +735,7 @@
                         </p>
                         <a href="https://www.instagram.com/luismiguelguerrero.10/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-liberal hover:text-liberal-dark text-sm font-medium mt-2 transition-colors">
                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" /></svg>
-                            @luismiguelguerrero.10
+                            luismiguelguerrero.10
                         </a>
                     </div>
                     <div class="text-center md:text-right">
@@ -748,8 +748,94 @@
     </footer>
 
     <!-- ========== SCRIPTS ========== -->
-    <script> 
-        
+    <script>
+        // ========== PROTECCIÓN ANTI-INSPECCIÓN ==========
+
+        // 1. Deshabilitar clic derecho
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+            return false;
+        });
+
+        // 2. Deshabilitar teclas de inspección (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U, Ctrl+S)
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'F12' || e.keyCode === 123) {
+                e.preventDefault();
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.keyCode === 73)) {
+                e.preventDefault();
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && (e.key === 'J' || e.key === 'j' || e.keyCode === 74)) {
+                e.preventDefault();
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && (e.key === 'C' || e.key === 'c' || e.keyCode === 67)) {
+                e.preventDefault();
+                return false;
+            }
+            if (e.ctrlKey && (e.key === 'U' || e.key === 'u' || e.keyCode === 85)) {
+                e.preventDefault();
+                return false;
+            }
+            if (e.ctrlKey && (e.key === 'S' || e.key === 's' || e.keyCode === 83)) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // 3. Deshabilitar arrastrar elementos
+        document.addEventListener('dragstart', function (e) {
+            e.preventDefault();
+            return false;
+        });
+
+        // 4. Deshabilitar selección de texto
+        document.addEventListener('selectstart', function (e) {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+                return true;
+            }
+            e.preventDefault();
+            return false;
+        });
+
+        // 5. Detectar DevTools abierto
+        (function () {
+            var devtoolsOpen = false;
+            var threshold = 160;
+
+            function checkDevTools() {
+                var widthDiff = window.outerWidth - window.innerWidth > threshold;
+                var heightDiff = window.outerHeight - window.innerHeight > threshold;
+
+                if (widthDiff || heightDiff) {
+                    if (!devtoolsOpen) {
+                        devtoolsOpen = true;
+                        document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#991B1B;color:white;font-family:Inter,sans-serif;text-align:center;padding:2rem;"><div><h1 style="font-size:2rem;font-weight:900;margin-bottom:1rem;">⛔ Acceso no autorizado</h1><p style="font-size:1.1rem;opacity:0.9;">Las herramientas de desarrollo están deshabilitadas en este sitio.</p><p style="margin-top:1rem;font-size:0.9rem;opacity:0.7;">© Luis Miguel Guerrero Gutiérrez</p></div></div>';
+                    }
+                } else {
+                    devtoolsOpen = false;
+                }
+            }
+
+            setInterval(checkDevTools, 1000);
+        })();
+
+        // 6. Bloquear console
+        (function () {
+            var noop = function () { };
+            try {
+                console.log = noop;
+                console.debug = noop;
+                console.info = noop;
+                console.warn = noop;
+                console.error = noop;
+                console.table = noop;
+                console.dir = noop;
+            } catch (e) { }
+        })();
+
         // ========== FUNCIONALIDAD DEL SITIO ==========
 
         // Menú móvil
