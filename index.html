@@ -374,7 +374,7 @@
                         <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-text-main mb-2 text-left">IA4GOV</h3>
                         <p class="text-[10px] sm:text-xs font-semibold text-liberal uppercase tracking-wider mb-3 sm:mb-4 text-left">Sistema de Análisis de Políticas Públicas con IA &amp; Métodos Estadísticos</p>
                         <p class="text-sm sm:text-base text-text-soft mb-4 leading-relaxed">
-                            En el marco de mi investigación de maestría en Gobernabilidad, innovación democrática y DDHH, desarrollé un prototipo de software que integra <strong>inteligencia artificial</strong> y <strong>6 métodos estadísticos independientes</strong> : simulación Monte Carlo, regresión logística multifactorial, inferencia bayesiana, perturbación gaussiana, entropía de Shannon y análisis de sensibilidad  para estimar la probabilidad de éxito de políticas públicas desde múltiples dimensiones.
+                            En el marco de mi investigación de maestría en Gobernabilidad, innovación democrática y DDHH, desarrollé un prototipo de software que integra <strong>inteligencia artificial</strong> y <strong>6 métodos estadísticos independientes</strong> — simulación Monte Carlo, regresión logística multifactorial, inferencia bayesiana, perturbación gaussiana, entropía de Shannon y análisis de sensibilidad — para estimar la probabilidad de éxito de políticas públicas desde múltiples dimensiones.
                         </p>
                         <p class="text-sm sm:text-base text-text-soft mb-4 leading-relaxed">
                             Estos resultados cuantitativos alimentan a <strong>GPT-4o</strong>, que genera interpretaciones cualitativas <span class="accent-text">fundamentadas en evidencia real, no en opiniones</span>. El desarrollo constituye una iniciativa orientada a fortalecer la toma de decisiones públicas basada en datos.
@@ -709,7 +709,17 @@
             </div>
         </div>
     </footer>
+    <!-- ========== AUDIO DE FONDO ========== -->
+    <audio id="bg-music" loop preload="auto">
+        <source src="~/audio.mp3" type="audio/mpeg" />
+    </audio>
+     
 
+    <button id="music-toggle" class="fixed bottom-6 right-6 z-50 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/90 backdrop-blur-md border border-liberal/20 shadow-lg flex items-center justify-center text-liberal hover:scale-110 transition-all duration-300 group" aria-label="Controlar música">
+        <svg id="icon-music-on" class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M9 9v6a3 3 0 01-3 3H5a3 3 0 01-3-3v0a3 3 0 013-3h1l3-3z"></path></svg>
+        <svg id="icon-music-off" class="hidden w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"></path></svg>
+        <span class="absolute -top-8 right-0 bg-text-main text-white text-[10px] px-2 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">🎵 Música</span>
+    </button>
     <!-- ========== SCRIPTS ========== -->
     <script>
         document.addEventListener('contextmenu', function (e) { e.preventDefault(); return false; });
@@ -774,6 +784,61 @@
             cards[k].style.transform = 'translateY(20px)';
             cards[k].style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(cards[k]);
+        }
+
+
+        // Música de fondo
+        var bgMusic = document.getElementById('bg-music');
+        var musicToggle = document.getElementById('music-toggle');
+        var iconMusicOn = document.getElementById('icon-music-on');
+        var iconMusicOff = document.getElementById('icon-music-off');
+        var musicPlaying = false;
+
+        if (bgMusic) {
+            bgMusic.volume = 0.06; // Volumen suave (15%)
+        }
+
+        function startMusic() {
+            if (bgMusic && !musicPlaying) {
+                bgMusic.play().then(function () {
+                    musicPlaying = true;
+                    iconMusicOn.classList.remove('hidden');
+                    iconMusicOff.classList.add('hidden');
+                }).catch(function () {
+                    musicPlaying = false;
+                });
+            }
+        }
+
+        // Intentar reproducir al primer clic/toque en la página
+        document.addEventListener('click', function initMusic() {
+            startMusic();
+            document.removeEventListener('click', initMusic);
+        }, { once: true });
+
+        document.addEventListener('touchstart', function initMusicTouch() {
+            startMusic();
+            document.removeEventListener('touchstart', initMusicTouch);
+        }, { once: true });
+
+        if (musicToggle) {
+            musicToggle.addEventListener('click', function (e) {
+                e.stopPropagation();
+                if (!bgMusic) return;
+
+                if (musicPlaying) {
+                    bgMusic.pause();
+                    musicPlaying = false;
+                    iconMusicOn.classList.add('hidden');
+                    iconMusicOff.classList.remove('hidden');
+                } else {
+                    bgMusic.play().then(function () {
+                        musicPlaying = true;
+                        iconMusicOn.classList.remove('hidden');
+                        iconMusicOff.classList.add('hidden');
+                    }).catch(function () { });
+                }
+            });
         }
     </script>
 </body>
